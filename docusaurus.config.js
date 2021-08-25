@@ -23,6 +23,11 @@ module.exports = {
 					label: "Docs",
 				},
 				{
+					href: "https://npmjs.com/package/tauber",
+					label: "NPM Package",
+					position: "right",
+				},
+				{
 					href: "https://github.com/ranjithrd/tauber",
 					label: "GitHub",
 					position: "right",
