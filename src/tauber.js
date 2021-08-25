@@ -37,9 +37,10 @@ function execute(command, directory, showOutput, logFunction, errorFunction) {
 }
 
 async function readConfig(customPath) {
-	const packageJsonPath = JSON.parse(
-		(await fs.readFile("package.json")).toString()
-	)?.tauber?.entry
+	const packageJsonData = JSON.parse(
+		(await fs.readFile("package.json").catch((e) => {}))?.toString() ?? "{}"
+	)
+	const packageJsonPath = packageJsonData?.tauber?.entry
 	const filePath = customPath ?? packageJsonPath ?? "cli.yaml"
 	const fd = await (
 		await fs.readFile(filePath).catch((e) => console.error(e))
