@@ -117,14 +117,22 @@ async function executeOneCommand(cmd, args, commands) {
 }
 
 async function main(config) {
-	const [_a, _b, ...args] = process.argv
+	let [_a, _b, ...args] = process.argv
+
+	let path = config?.filePath
 
 	if (args.length < 1) {
 		console.error("Please enter a command to run")
 		return
 	}
 
-	const data = await readConfig(config?.filePath)
+	if (args.length > 1 && args.includes("--file")) {
+		const index = args.indexOf("--file")
+		path = args[index + 1]
+		args = args.filter((v) => v !== path && v !== "--file")
+	}
+
+	const data = await readConfig(path)
 	const [command, execArgs] = findCommandToRun(data.commands, args)
 
 	await executeOneCommand("pre", execArgs, data.commands).catch((e) =>

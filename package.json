@@ -1,8 +1,19 @@
 {
 	"name": "tauber",
+	"description": "A powerful alternative to NPM Scripts that helps you create CLIs in one file",
+	"keywords": [
+		"cli",
+		"one file",
+		"command line interface",
+		"npm scripts",
+		"yaml"
+	],
 	"version": "0.0.1",
 	"main": "src/tauber.js",
 	"author": "Ranjith RD",
+	"repository": {
+		"url": "https://github.com/ranjithrd/tauber"
+	},
 	"scripts": {
 		"cli": "node src/cli.js"
 	},
