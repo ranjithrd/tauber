@@ -53,6 +53,12 @@ module.exports = {
 			theme: lightCodeTheme,
 			darkTheme: darkCodeTheme,
 		},
+		gtag: {
+			// You can also use your "G-" Measurement ID here.
+			trackingID: "G-H4J1FSYT38",
+			// Optional fields.
+			anonymizeIP: false, // Should IPs be anonymized?
+		},
 	},
 	presets: [
 		[
