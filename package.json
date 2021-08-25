@@ -19,7 +19,7 @@
 	},
 	"bin": "./src/cli.js",
 	"license": "MIT",
-	"private": true,
+	"private": false,
 	"dependencies": {
 		"yaml": "^1.10.2"
 	},
